@@ -14,26 +14,25 @@ public class CardDetailActivity extends FragmentActivity implements CardDetailFr
         setContentView(R.layout.activity_card_detail);
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        getOrCreateDetailsFragment();
+    }
+    
+    private void getOrCreateDetailsFragment() {
+    	
+    	CardDetailFragment fragment = null;
+    	if (getSupportFragmentManager().findFragmentByTag("0") != null) {
+    		fragment = (CardDetailFragment) getSupportFragmentManager().findFragmentByTag("0");
+    	} else {
+    		Bundle arguments = new Bundle();
+    		arguments.putInt(CardDetailFragment.ARG_ITEM_ID, getIntent().getIntExtra(CardDetailFragment.ARG_ITEM_ID, 0));
+        	
+    		fragment = new CardDetailFragment();
+    		fragment.setArguments(arguments);
 
-        if (savedInstanceState == null) {
-            Bundle arguments = new Bundle();
-            arguments.putInt(CardDetailFragment.ARG_ITEM_ID, getIntent().getIntExtra(CardDetailFragment.ARG_ITEM_ID, 0));
-            CardDetailFragment fragment = new CardDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.card_detail_container, fragment)
-                    .commit();
-        } else if (getIntent().getExtras() != null) {
-        	Bundle arguments = new Bundle();
-        	arguments.putInt(CardDetailFragment.ARG_ITEM_ID, getIntent().getIntExtra(CardDetailFragment.ARG_ITEM_ID, 0));
-
-        	CardDetailFragment fragment = new CardDetailFragment();
-        	fragment.setArguments(arguments);
-
-        	getSupportFragmentManager().beginTransaction()
-        	.add(R.id.card_detail_container, fragment)
-        	.commit();
-        }
+    		getSupportFragmentManager().beginTransaction()
+    		.add(R.id.card_detail_container, fragment, "0")
+    		.commit();
+    	}
     }
 
     @Override

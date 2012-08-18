@@ -56,6 +56,7 @@ public class CardDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		setRetainInstance(true);
         if (getArguments().containsKey(ARG_ITEM_ID)) {
         	int int1 = getArguments().getInt(ARG_ITEM_ID);
             currentCard = PrayerCards.cardTitles.CARDS.get(int1);
