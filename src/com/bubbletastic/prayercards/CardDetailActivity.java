@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
-public class CardDetailActivity extends FragmentActivity {
+public class CardDetailActivity extends FragmentActivity implements CardDetailFragmentAccess {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +17,22 @@ public class CardDetailActivity extends FragmentActivity {
 
         if (savedInstanceState == null) {
             Bundle arguments = new Bundle();
-            arguments.putString(CardDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(CardDetailFragment.ARG_ITEM_ID));
+            arguments.putInt(CardDetailFragment.ARG_ITEM_ID, getIntent().getIntExtra(CardDetailFragment.ARG_ITEM_ID, 0));
             CardDetailFragment fragment = new CardDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.card_detail_container, fragment)
                     .commit();
+        } else if (getIntent().getExtras() != null) {
+        	Bundle arguments = new Bundle();
+        	arguments.putInt(CardDetailFragment.ARG_ITEM_ID, getIntent().getIntExtra(CardDetailFragment.ARG_ITEM_ID, 0));
+
+        	CardDetailFragment fragment = new CardDetailFragment();
+        	fragment.setArguments(arguments);
+
+        	getSupportFragmentManager().beginTransaction()
+        	.add(R.id.card_detail_container, fragment)
+        	.commit();
         }
     }
 
@@ -36,4 +45,9 @@ public class CardDetailActivity extends FragmentActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+	@Override
+	public void setActivityTitle(String title) {
+		setTitle(title);
+	}
 }

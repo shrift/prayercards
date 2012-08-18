@@ -28,7 +28,7 @@ public class CardDetailPagerAdapter extends PagerAdapter {
 	@Override
 	public boolean isViewFromObject(View view, Object object) {
 		CardWebView card  = (CardWebView) object;
-		return ((CardWebView) view).getCardId().equals(card.getCardId());
+		return ((CardWebView) view).getCardId() == card.getCardId();
 	}
 	
 	@Override
@@ -42,5 +42,9 @@ public class CardDetailPagerAdapter extends PagerAdapter {
 	public void destroyItem(ViewGroup container, int position, Object object) {
 		((ViewPager)container).removeView((View)object);
 		((CardWebView) object).onViewDestroyed();
+	}
+
+	public Card getItemAtPosition(int position) {
+		return cards.get(position);
 	}
 }

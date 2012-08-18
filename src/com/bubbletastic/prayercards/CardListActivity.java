@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-public class CardListActivity extends FragmentActivity implements CardListFragmentAccess {
+public class CardListActivity extends FragmentActivity implements CardListFragmentAccess, CardDetailFragmentAccess {
 
     private boolean mTwoPane;
 
@@ -22,10 +22,10 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
     }
 
     @Override
-    public void onItemSelected(String id) {
+    public void onItemSelected(int id) {
         if (mTwoPane) {
             Bundle arguments = new Bundle();
-            arguments.putString(CardDetailFragment.ARG_ITEM_ID, id);
+            arguments.putInt(CardDetailFragment.ARG_ITEM_ID, id);
             CardDetailFragment fragment = new CardDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
@@ -38,4 +38,9 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
             startActivity(detailIntent);
         }
     }
+
+	@Override
+	public void setActivityTitle(String title) {
+		setTitle(title);
+	}
 }

@@ -1,14 +1,13 @@
 package com.bubbletastic.prayercards;
 
-import com.bubbletastic.prayercards.model.Card;
-import com.bubbletastic.prayercards.model.CardTitles;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.bubbletastic.prayercards.model.Card;
 
 
 public class CardListFragment extends ListFragment {
@@ -20,13 +19,12 @@ public class CardListFragment extends ListFragment {
 
     private static CardListFragmentAccess sDummyCallbacks = new CardListFragmentAccess() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(int id) {
         }
 
     };
 
-    public CardListFragment() {
-    }
+    public CardListFragment() { }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,7 +32,7 @@ public class CardListFragment extends ListFragment {
         setListAdapter(new ArrayAdapter<Card>(getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                CardTitles.CARDS));
+                PrayerCards.cardTitles.CARDS));
     }
 
     @Override
@@ -65,7 +63,7 @@ public class CardListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        mCallbacks.onItemSelected(CardTitles.CARDS.get(position).id);
+        mCallbacks.onItemSelected(position);
     }
 
     @Override

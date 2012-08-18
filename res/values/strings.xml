@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Prayer Cards</string>
     <string name="title_card_detail">Card Detail</string>
     <string name="title_card_list">Prayer Cards</string>
-
     <string name="card_1_title">Introduction</string>
     <string name="card_2_title">Act of Surrender</string>
     <string name="card_3_title">Adore God Through Focused Attention</string>
@@ -24,5 +24,5 @@
     <string name="card_8_filename">the_divine_hours.html</string>
     <string name="card_9_filename">the_jesus_prayer.html</string>
     <string name="card_10_filename">serenity_prayer.html</string>
-    
+
 </resources>

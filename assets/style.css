@@ -1,0 +1,113 @@
+@CHARSET "UTF-8";
+
+
+html, body{
+    -webkit-text-size-adjust: none; /* Never autoresize text */
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: helvetica;
+	color: #82A136;
+    font-size: 1.0em;
+	overflow: auto;
+	/*width: 100%;*/
+}
+
+
+h1, h2, h3, h4, h5{
+	color: #82A136;
+}
+
+
+
+#card-details h3:first-child{
+	margin-top: 0px !important;
+}
+
+#card-details h3{
+	background: url("h3-bg.png") repeat-x scroll 0 0 transparent;
+	height: 1.8em;
+	width: 100%;
+    
+	margin: 5px 0; /* this sets the offset from the banner that the next text will start */
+	padding: 9px 0px; /* this adjusts the banner text height */
+    text-align:center;
+    font-style:italic;
+    color:white;
+}
+
+#card-details{
+	font-size: 1.0em;
+}
+
+ol{
+	//padding-left: 20px;
+	padding-right: 10px;
+    color: #000000;
+    font-size: 1.0em;
+}
+
+li {
+    padding-left:0px;
+    margin-left:0px;
+}
+ol p {
+    color: #82A136;
+    font-size: 1.0em;
+}
+
+
+#card-details p{
+	padding: 0 12px 0 12px;
+	margin: 14px 0 15px 0;
+	line-height: 1.2em;
+    font-size: 1.0em;
+}
+
+#card-details .learnMore{
+    font-style: italic;
+    font-size: 0.7em;
+    text-align:center;
+/*
+*/
+	display: block;
+	padding-bottom: 20px;
+	width: 92%;
+	margin: 0 auto;
+}
+
+#card-details .referenceFooter{
+    font-size: 0.8em;
+    text-align:center;
+    /*
+     */
+	display: block;
+	padding-bottom: 15px;
+	width: 92%;
+	margin: 0 auto;
+}
+
+
+#card-details .subtitle{
+    margin: 14px 0 15px 0;
+    font-size: 1.0em;
+    text-align:center;
+    /*
+     */
+	display: block;
+}
+
+#ital {
+    font-style: italic;
+}
+
+#orange{
+	
+	color: #e23700;
+}
+a{
+	
+	color: #e23700;
+}

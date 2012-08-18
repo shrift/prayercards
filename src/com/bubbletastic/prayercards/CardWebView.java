@@ -33,10 +33,10 @@ public class CardWebView extends WebView {
     	setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 0, 0));
     	setVerticalFadingEdgeEnabled(true);
     	setHorizontalFadingEdgeEnabled(true);
-		loadUrl(card.fileName);
+		loadUrl("file:///android_asset/"+card.fileName);
 	}
 	
-	public String getCardId() {
+	public int getCardId() {
 		return card.id;
 	}
 	

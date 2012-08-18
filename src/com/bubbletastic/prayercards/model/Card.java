@@ -2,18 +2,18 @@ package com.bubbletastic.prayercards.model;
 
 public class Card {
 
-    public String id;
-    public String content;
+    public int id;
+    public String title;
 	public String fileName;
 
-    public Card(String id, String content, String fileName) {
+    public Card(int id, String content, String fileName) {
         this.id = id;
-        this.content = content;
+        this.title = content;
         this.fileName = fileName;
     }
 
     @Override
     public String toString() {
-        return content;
+        return title;
     }
 }
