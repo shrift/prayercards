@@ -3,6 +3,7 @@
     <string name="app_name">Prayer Cards</string>
     <string name="title_card_detail">Card Detail</string>
     <string name="title_card_list">Prayer Cards</string>
+<<<<<<< HEAD
     <string name="card_1_title">Some Title</string>
     <string name="card_2_title">Some Title</string>
     <string name="card_3_title">Some Title</string>
@@ -14,4 +15,27 @@
     <string name="card_9_title">Some Title</string>
     <string name="card_10_title">Some Title</string>
 
+=======
+    <string name="card_1_title">Introduction</string>
+    <string name="card_2_title">Act of Surrender</string>
+    <string name="card_3_title">Adore God Through Focused Attention</string>
+    <string name="card_4_title">Be Still Meditation</string>
+    <string name="card_5_title">Gratitude Examen</string>
+    <string name="card_6_title">Prayer of Love and Remembrance</string>
+    <string name="card_7_title">Scripture Meditation</string>
+    <string name="card_8_title">The Divine Hours</string>
+    <string name="card_9_title">The Jesus Prayer</string>
+    <string name="card_10_title">The Serenity Prayer</string>
+    <string name="card_1_filename">prayer_practice_cards.html</string>
+    <string name="card_2_filename">act_of_surrender.html</string>
+    <string name="card_3_filename">adore_god.html</string>
+    <string name="card_4_filename">be_still_meditation.html</string>
+    <string name="card_5_filename">gratitude_examen.html</string>
+    <string name="card_6_filename">prayer_of_love.html</string>
+    <string name="card_7_filename">scripture_meditation.html</string>
+    <string name="card_8_filename">the_divine_hours.html</string>
+    <string name="card_9_filename">the_jesus_prayer.html</string>
+    <string name="card_10_filename">serenity_prayer.html</string>
+    
+>>>>>>> added html files and string constants
 </resources>
