@@ -3,19 +3,7 @@
     <string name="app_name">Prayer Cards</string>
     <string name="title_card_detail">Card Detail</string>
     <string name="title_card_list">Prayer Cards</string>
-<<<<<<< HEAD
-    <string name="card_1_title">Some Title</string>
-    <string name="card_2_title">Some Title</string>
-    <string name="card_3_title">Some Title</string>
-    <string name="card_4_title">Some Title</string>
-    <string name="card_5_title">Some Title</string>
-    <string name="card_6_title">Some Title</string>
-    <string name="card_7_title">Some Title</string>
-    <string name="card_8_title">Some Title</string>
-    <string name="card_9_title">Some Title</string>
-    <string name="card_10_title">Some Title</string>
 
-=======
     <string name="card_1_title">Introduction</string>
     <string name="card_2_title">Act of Surrender</string>
     <string name="card_3_title">Adore God Through Focused Attention</string>
@@ -37,5 +25,4 @@
     <string name="card_9_filename">the_jesus_prayer.html</string>
     <string name="card_10_filename">serenity_prayer.html</string>
     
->>>>>>> added html files and string constants
 </resources>
