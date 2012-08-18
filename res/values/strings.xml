@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">PrayerCards</string>
+    <string name="title_card_detail">Card Detail</string>
+    <string name="title_card_list">Cards</string>
+    <string name="card_1_title">Some Title</string>
+    <string name="card_2_title">Some Title</string>
+    <string name="card_3_title">Some Title</string>
+    <string name="card_4_title">Some Title</string>
+    <string name="card_5_title">Some Title</string>
+    <string name="card_6_title">Some Title</string>
+    <string name="card_7_title">Some Title</string>
+    <string name="card_8_title">Some Title</string>
+    <string name="card_9_title">Some Title</string>
+    <string name="card_10_title">Some Title</string>
+
+</resources>
