@@ -34,6 +34,7 @@ public class CardWebView extends WebView {
     	setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 0, 0));
     	getSettings().setSupportZoom(true);
     	getSettings().setBuiltInZoomControls(true);
+    	getSettings().setDisplayZoomControls(false);
 		loadUrl("file:///android_asset/"+card.fileName);
 	}
 	

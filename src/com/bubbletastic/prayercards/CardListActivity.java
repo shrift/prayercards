@@ -36,6 +36,7 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
             Intent detailIntent = new Intent(this, CardDetailActivity.class);
             detailIntent.putExtra(CardDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
+            overridePendingTransition(R.anim.push_in_from_right, R.anim.push_out_to_left);
         }
     }
 

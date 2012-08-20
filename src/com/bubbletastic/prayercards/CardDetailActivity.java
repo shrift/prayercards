@@ -3,7 +3,6 @@ package com.bubbletastic.prayercards;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
 public class CardDetailActivity extends FragmentActivity implements CardDetailFragmentAccess {
@@ -38,7 +37,11 @@ public class CardDetailActivity extends FragmentActivity implements CardDetailFr
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            NavUtils.navigateUpTo(this, new Intent(this, CardListActivity.class));
+        	Intent intent = new Intent(this, CardListActivity.class);
+        	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            overridePendingTransition(R.anim.push_in_from_left, R.anim.push_out_to_right);
+            finish();
             return true;
         }
 
@@ -48,5 +51,11 @@ public class CardDetailActivity extends FragmentActivity implements CardDetailFr
 	@Override
 	public void setActivityTitle(String title) {
 		setTitle(title);
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.push_in_from_left, R.anim.push_out_to_right);
 	}
 }
