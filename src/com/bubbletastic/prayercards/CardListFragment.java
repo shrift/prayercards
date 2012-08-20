@@ -30,7 +30,7 @@ public class CardListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new ArrayAdapter<Card>(getActivity(),
-                android.R.layout.simple_list_item_activated_1,
+                R.layout.card_list_row_layout,
                 android.R.id.text1,
                 PrayerCards.cardTitles.CARDS));
     }

@@ -9,7 +9,7 @@ html, body{
 
 body{
 	font-family: helvetica;
-	color: #82A136;
+	color: #506520;
     font-size: 1.0em;
 	overflow: auto;
 	/*width: 100%;*/
@@ -17,7 +17,7 @@ body{
 
 
 h1, h2, h3, h4, h5{
-	color: #82A136;
+	color: #506520;
 }
 
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5{
 ol{
 	//padding-left: 20px;
 	padding-right: 10px;
-    color: #000000;
+	color: #506520;
     font-size: 1.0em;
 }
 
@@ -54,12 +54,12 @@ li {
     margin-left:0px;
 }
 ol p {
-    color: #82A136;
+    color: #506520;
     font-size: 1.0em;
 }
 
 
-#card-details p{
+#card-details {
 	padding: 0 12px 0 12px;
 	margin: 14px 0 15px 0;
 	line-height: 1.2em;
