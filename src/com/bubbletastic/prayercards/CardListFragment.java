@@ -1,8 +1,13 @@
 package com.bubbletastic.prayercards;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -16,6 +21,8 @@ public class CardListFragment extends ListFragment implements CardListFragmentAc
 
     private CardListFragmentCallbacks mCallbacks = sDummyCallbacks;
     private int mActivatedPosition = ListView.INVALID_POSITION;
+
+	private BroadcastReceiver broadcastReceiver;
 
     private static CardListFragmentCallbacks sDummyCallbacks = new CardListFragmentCallbacks() {
         @Override
@@ -33,6 +40,12 @@ public class CardListFragment extends ListFragment implements CardListFragmentAc
                 R.layout.card_list_row_layout,
                 android.R.id.text1,
                 PrayerCards.cardTitles.CARDS));
+        
+        broadcastReceiver = new BroadcastReceiver() {
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				setSelectedItem(intent.getIntExtra("currentCardPosition", 0)); } };
+        LocalBroadcastManager.getInstance(getActivity().getApplicationContext()).registerReceiver(broadcastReceiver, new IntentFilter("card_changed"));
     }
 
     @Override
@@ -59,6 +72,12 @@ public class CardListFragment extends ListFragment implements CardListFragmentAc
     public void onDetach() {
         super.onDetach();
         mCallbacks = sDummyCallbacks;
+    }
+    
+    @Override
+    public void onDestroy() {
+    	super.onDestroy();
+    	LocalBroadcastManager.getInstance(getActivity().getApplicationContext()).unregisterReceiver(broadcastReceiver);
     }
 
     @Override

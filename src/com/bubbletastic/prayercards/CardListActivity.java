@@ -20,6 +20,7 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
         
         if (mTwoPane) {
         	detailFragment = getOrCreateDetailsFragment(0);
+        	setNewSelection(0);
         }
     }
     

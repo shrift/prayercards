@@ -2,8 +2,10 @@ package com.bubbletastic.prayercards;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -99,7 +101,14 @@ public class CardDetailFragment extends Fragment implements CardDetailFragmentAc
     		public void onPageSelected(int position) {
     			currentCard = adapter.getItemAtPosition(position);
     			callbacks.setActivityTitle(currentCard.title);
-    			callbacks.setNewSelection(position);
+    			
+    			//Not needed now that I am broadcasting.
+//    			callbacks.setNewSelection(position);
+    			
+    			LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(getActivity().getApplicationContext());
+    			Intent intent = new Intent("card_changed");
+    			intent.putExtra("currentCardPosition", position);
+    			localBroadcastManager.sendBroadcast(intent);
     			super.onPageSelected(position);
     		}
 
