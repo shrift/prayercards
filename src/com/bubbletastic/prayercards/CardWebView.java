@@ -30,9 +30,10 @@ public class CardWebView extends WebView {
 	
 	@SuppressWarnings("deprecation")
 	private void init() {
+		setBackgroundColor(getResources().getColor(android.R.color.white));
     	setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 0, 0));
-    	setVerticalFadingEdgeEnabled(true);
-    	setHorizontalFadingEdgeEnabled(true);
+    	getSettings().setSupportZoom(true);
+    	getSettings().setBuiltInZoomControls(true);
 		loadUrl("file:///android_asset/"+card.fileName);
 	}
 	
