@@ -10,14 +10,14 @@ import android.widget.ListView;
 import com.bubbletastic.prayercards.model.Card;
 
 
-public class CardListFragment extends ListFragment {
+public class CardListFragment extends ListFragment implements CardListFragmentAccess {
 
     private static final String STATE_ACTIVATED_POSITION = "activated_position";
 
-    private CardListFragmentAccess mCallbacks = sDummyCallbacks;
+    private CardListFragmentCallbacks mCallbacks = sDummyCallbacks;
     private int mActivatedPosition = ListView.INVALID_POSITION;
 
-    private static CardListFragmentAccess sDummyCallbacks = new CardListFragmentAccess() {
+    private static CardListFragmentCallbacks sDummyCallbacks = new CardListFragmentCallbacks() {
         @Override
         public void onItemSelected(int id) {
         }
@@ -48,11 +48,11 @@ public class CardListFragment extends ListFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (!(activity instanceof CardListFragmentAccess)) {
+        if (!(activity instanceof CardListFragmentCallbacks)) {
             throw new IllegalStateException("Activity must implement fragment's callbacks.");
         }
 
-        mCallbacks = (CardListFragmentAccess) activity;
+        mCallbacks = (CardListFragmentCallbacks) activity;
     }
 
     @Override
@@ -75,13 +75,13 @@ public class CardListFragment extends ListFragment {
         }
     }
 
-    public void setActivateOnItemClick(boolean activateOnItemClick) {
+    private void setActivateOnItemClick(boolean activateOnItemClick) {
         getListView().setChoiceMode(activateOnItemClick
                 ? ListView.CHOICE_MODE_SINGLE
                 : ListView.CHOICE_MODE_NONE);
     }
 
-    public void setActivatedPosition(int position) {
+    private void setActivatedPosition(int position) {
         if (position == ListView.INVALID_POSITION) {
             getListView().setItemChecked(mActivatedPosition, false);
         } else {
@@ -90,4 +90,11 @@ public class CardListFragment extends ListFragment {
 
         mActivatedPosition = position;
     }
+
+	@Override
+	public void setSelectedItem(int position) {
+		if (getListView() != null) {
+			setActivatedPosition(position);
+		}
+	}
 }

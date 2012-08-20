@@ -14,7 +14,7 @@ import android.view.ViewGroup.LayoutParams;
 
 import com.bubbletastic.prayercards.model.Card;
 
-public class CardDetailFragment extends Fragment {
+public class CardDetailFragment extends Fragment implements CardDetailFragmentAccess {
 
     public static final String ARG_ITEM_ID = "item_id";
 
@@ -22,14 +22,20 @@ public class CardDetailFragment extends Fragment {
 
 	private ViewPager viewPager;
 
-	private CardDetailFragmentAccess callbacks;
+	private CardDetailFragmentCallbacks callbacks;
 
 	private CardDetailPagerAdapter adapter;
 	
-    private static CardDetailFragmentAccess sDummyCallbacks = new CardDetailFragmentAccess() {
+    private static CardDetailFragmentCallbacks sDummyCallbacks = new CardDetailFragmentCallbacks() {
 
 		@Override
 		public void setActivityTitle(String title) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void setNewSelection(int position) {
 			// TODO Auto-generated method stub
 			
 		}
@@ -40,11 +46,11 @@ public class CardDetailFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (!(activity instanceof CardDetailFragmentAccess)) {
+        if (!(activity instanceof CardDetailFragmentCallbacks)) {
             throw new IllegalStateException("Activity must implement fragment's callbacks.");
         }
 
-        callbacks = (CardDetailFragmentAccess) activity;
+        callbacks = (CardDetailFragmentCallbacks) activity;
     }
 
     @Override
@@ -93,6 +99,7 @@ public class CardDetailFragment extends Fragment {
     		public void onPageSelected(int position) {
     			currentCard = adapter.getItemAtPosition(position);
     			callbacks.setActivityTitle(currentCard.title);
+    			callbacks.setNewSelection(position);
     			super.onPageSelected(position);
     		}
 
@@ -104,4 +111,11 @@ public class CardDetailFragment extends Fragment {
     	viewPager = null;
     	super.onDestroy();
     }
+
+	@Override
+	public void setSelectedItem(int position) {
+		if (viewPager != null) {
+			viewPager.setCurrentItem(position);
+		}
+	}
 }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 
-public class CardDetailActivity extends FragmentActivity implements CardDetailFragmentAccess {
+public class CardDetailActivity extends FragmentActivity implements CardDetailFragmentCallbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,5 +57,9 @@ public class CardDetailActivity extends FragmentActivity implements CardDetailFr
 	public void onBackPressed() {
 		super.onBackPressed();
 		overridePendingTransition(R.anim.push_in_from_left, R.anim.push_out_to_right);
+	}
+
+	@Override
+	public void setNewSelection(int position) {
 	}
 }

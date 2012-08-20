@@ -2,5 +2,6 @@ package com.bubbletastic.prayercards;
 
 public interface CardDetailFragmentAccess {
 
-	public void setActivityTitle(String title);
+	public void setSelectedItem(int position);
+	
 }
