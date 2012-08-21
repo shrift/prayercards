@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 
+
 public class CardDetailActivity extends FragmentActivity implements CardDetailFragmentCallbacks {
 
     @Override

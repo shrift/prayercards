@@ -1,14 +1,27 @@
 package com.bubbletastic.prayercards;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class CardListActivity extends FragmentActivity implements CardListFragmentCallbacks, CardDetailFragmentCallbacks {
 
     private boolean mTwoPane;
 	private CardDetailFragment detailFragment;
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_main_activity, menu);
+	    
+	    return true;
+	}
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +35,7 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
         	detailFragment = getOrCreateDetailsFragment(0);
         	setNewSelection(0);
         }
+        
     }
     
     private CardDetailFragment getOrCreateDetailsFragment(int position) {
@@ -45,6 +59,29 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
     	return newDetailFragment;
     }
         
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	
+    	if (item.getTitle().equals(getString(R.string.menu_info))) {
+    		
+    		String url = getString(R.string.url_book);
+      	  	Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse(url)); 
+      	  	startActivity(browserIntent);    		
+            overridePendingTransition(R.anim.push_in_from_right, R.anim.push_out_to_left);
+    		
+    		return true;
+    	}
+    	else if (item.getTitle().equals(getString(R.string.menu_tdh))) {
+    		    		
+            Intent detailIntent = new Intent(this, TheDivineHourActivity.class);
+            //detailIntent.putExtra(CardDetailFragment.ARG_ITEM_ID, position);
+            startActivity(detailIntent);
+            overridePendingTransition(R.anim.push_in_from_right, R.anim.push_out_to_left);
+
+    	}
+    	
+    	return false;
+    }
 
     @Override
     public void onItemSelected(int position) {

@@ -30,6 +30,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CardListActivity" />
         </activity>
+        <activity
+            android:name=".TheDivineHourActivity"
+            android:label="@string/title_tdh"
+            android:launchMode="singleTop" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CardListActivity" />
+        </activity>
+        
     </application>
 
 </manifest>

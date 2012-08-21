@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tdh_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+>
+		<TextView 
+		    	android:id="@+id/textViewLine1"
+		    	android:text="@string/tdh_textview1"
+		    	android:textSize="14sp"
+		 		android:layout_width="wrap_content"
+		 		android:layout_height="wrap_content"
+		 		android:textColor="@color/gray"
+				android:background="@color/clear"
+	    		android:textStyle="bold" 
+	    		android:maxLines="1"
+	    		android:layout_marginTop="3dp"
+	    		android:layout_marginLeft="10dip"
+		/>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tdh_button1" 
+        android:layout_below="@+id/textViewLine1" 
+    />
+    
+		<TextView 
+		    	android:id="@+id/textViewLine2"
+		    	android:text="@string/tdh_textview2"
+		    	android:textSize="14sp"
+		 		android:layout_width="wrap_content"
+		 		android:layout_height="wrap_content"
+		 		android:textColor="@color/gray"
+				android:background="@color/clear"
+	    		android:textStyle="bold" 
+	    		android:maxLines="1"
+	    		android:layout_marginTop="3dp"
+	    		android:layout_marginLeft="10dip"
+        		android:layout_below="@+id/button1" 
+		/>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tdh_button2"
+        android:layout_below="@+id/textViewLine2" 
+    />
+
+</RelativeLayout>
+
+
+
