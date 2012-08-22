@@ -102,9 +102,6 @@ public class CardDetailFragment extends Fragment implements CardDetailFragmentAc
     			currentCard = adapter.getItemAtPosition(position);
     			callbacks.setActivityTitle(currentCard.title);
     			
-    			//Not needed now that I am broadcasting.
-//    			callbacks.setNewSelection(position);
-    			
     			LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(getActivity().getApplicationContext());
     			Intent intent = new Intent("card_changed");
     			intent.putExtra("currentCardPosition", position);
