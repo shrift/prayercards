@@ -56,6 +56,7 @@ public class CardListFragment extends ListFragment implements CardListFragmentAc
                 .containsKey(STATE_ACTIVATED_POSITION)) {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
         }
+        getListView().setSelector(R.drawable.list_view_selector);
     }
 
     @Override
