@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_tdh"
-          android:title="@string/menu_tdh"
-          android:showAsAction="ifRoom|withText" />
-    <item android:id="@+id/menu_info"
-          android:title="@string/menu_info"
-          android:showAsAction="ifRoom|withText" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_tdh"
+        android:showAsAction="never"
+        android:title="@string/menu_tdh"/>
+    <item
+        android:id="@+id/menu_info"
+        android:showAsAction="never"
+        android:title="@string/menu_info"/>
+
 </menu>

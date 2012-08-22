@@ -25,14 +25,14 @@
     <string name="card_8_filename">the_divine_hours.html</string>
     <string name="card_9_filename">the_jesus_prayer.html</string>
     <string name="card_10_filename">serenity_prayer.html</string>
-    <string name="menu_tdh">TDH</string>
-	<string name="menu_info">Info</string>
-	<string name="url_book">http://www.amazon.com/Mystically-Wired-Exploring-Realms-Prayer/dp/B004IEA3EM</string>
-	<string name="url_tdh_full">http://www.annarborvineyard.org/tdh/tdh.cfm</string>
-	<string name="url_tdh_mobile">http://www.annarborvineyard.org/tdh/tdh-iphone.cfm</string>
-	<string name="tdh_textview1">This view lets you change your time zone.</string>
-	<string name="tdh_textview2">This view is set to the EST time zone.</string>
-	<string name="tdh_button1">View full web page</string>
-	<string name="tdh_button2">View mobile web page</string>
-		
+    <string name="menu_tdh">The Divine Hours</string>
+    <string name="menu_info">Info</string>
+    <string name="url_book">http://www.amazon.com/Mystically-Wired-Exploring-Realms-Prayer/dp/B004IEA3EM</string>
+    <string name="url_tdh_full">http://www.annarborvineyard.org/tdh/tdh.cfm</string>
+    <string name="url_tdh_mobile">http://www.annarborvineyard.org/tdh/tdh-iphone.cfm</string>
+    <string name="tdh_textview1">This view lets you change your time zone.</string>
+    <string name="tdh_textview2">This view is set to the EST time zone.</string>
+    <string name="tdh_button1">View full web page</string>
+    <string name="tdh_button2">View mobile web page</string>
+
 </resources>
