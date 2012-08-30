@@ -4,6 +4,6 @@
     android:name="com.bubbletastic.prayercards.CardListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="8dip"
-    android:layout_marginRight="8dip"
+    android:paddingLeft="8dip"
+    android:paddingRight="8dip"
     tools:context=".CardListActivity" />

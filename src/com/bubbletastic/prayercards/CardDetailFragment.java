@@ -4,7 +4,6 @@ package com.bubbletastic.prayercards;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -14,9 +13,10 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
+import com.actionbarsherlock.app.SherlockFragment;
 import com.bubbletastic.prayercards.model.Card;
 
-public class CardDetailFragment extends Fragment implements CardDetailFragmentAccess {
+public class CardDetailFragment extends SherlockFragment implements CardDetailFragmentAccess {
 
     public static final String ARG_ITEM_ID = "item_id";
 

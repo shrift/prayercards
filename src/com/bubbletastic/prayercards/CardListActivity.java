@@ -3,22 +3,19 @@ package com.bubbletastic.prayercards;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
-public class CardListActivity extends FragmentActivity implements CardListFragmentCallbacks, CardDetailFragmentCallbacks {
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
+public class CardListActivity extends SherlockFragmentActivity implements CardListFragmentCallbacks, CardDetailFragmentCallbacks {
 
     private boolean mTwoPane;
 	private CardDetailFragment detailFragment;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.menu_main_activity, menu);
-	    
+	    getSupportMenuInflater().inflate(R.menu.menu_main_activity, menu);
 	    return true;
 	}
 	
@@ -26,7 +23,7 @@ public class CardListActivity extends FragmentActivity implements CardListFragme
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_list);
-
+        
         if (findViewById(R.id.card_detail_container) != null) {
             mTwoPane = true;
         }

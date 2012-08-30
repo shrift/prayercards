@@ -1,11 +1,15 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppTheme" parent="android:Theme.Light">
+    <style name="AppTheme" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/ActionBarStyle</item>
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
     </style>
 
-    <style name="ActionBarStyle" parent="android:Theme.Light">
+    <style name="ActionBarStyle" parent="Widget.Sherlock.ActionBar">
+        <item name="background">@drawable/actionbarbackground</item>
         <item name="android:background">@drawable/actionbarbackground</item>
+        <item name="titleTextStyle">@style/ActionBarStyleTitleStyle</item>
+        <item name="android:titleTextStyle">@style/ActionBarStyleTitleStyle</item>
     </style>
 
     <style name="ActionBarStyleTitleStyle">

@@ -6,16 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.bubbletastic.prayercards.model.Card;
 
 
-public class CardListFragment extends ListFragment implements CardListFragmentAccess {
+public class CardListFragment extends SherlockListFragment implements CardListFragmentAccess {
 
     private static final String STATE_ACTIVATED_POSITION = "activated_position";
 

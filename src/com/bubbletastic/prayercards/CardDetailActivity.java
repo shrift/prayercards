@@ -2,18 +2,19 @@ package com.bubbletastic.prayercards;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.view.MenuItem;
+
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.MenuItem;
 
 
-public class CardDetailActivity extends FragmentActivity implements CardDetailFragmentCallbacks {
+public class CardDetailActivity extends SherlockFragmentActivity implements CardDetailFragmentCallbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_detail);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getOrCreateDetailsFragment();
     }
     
@@ -36,7 +37,7 @@ public class CardDetailActivity extends FragmentActivity implements CardDetailFr
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
         	Intent intent = new Intent(this, CardListActivity.class);
         	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -46,8 +47,8 @@ public class CardDetailActivity extends FragmentActivity implements CardDetailFr
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
-    }
+		return super.onOptionsItemSelected(item);
+	}
 
 	@Override
 	public void setActivityTitle(String title) {

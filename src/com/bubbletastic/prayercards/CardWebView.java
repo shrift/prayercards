@@ -19,9 +19,9 @@ public class CardWebView extends WebView {
 	public CardWebView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
-	public CardWebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
-		super(context, attrs, defStyle, privateBrowsing);
-	}
+//	public CardWebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
+//		super(context, attrs, defStyle, privateBrowsing);
+//	}
 	public CardWebView(Context context, Card card) {
 		super(context);
 		this.card = card;
