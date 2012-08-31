@@ -75,9 +75,8 @@ public class CardDetailFragment extends SherlockFragment implements CardDetailFr
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	
-    	adapter = new CardDetailPagerAdapter(PrayerCards.cardTitles.CARDS, getActivity().getApplicationContext());
-    	
     	setupViewPager();
+    	adapter = new CardDetailPagerAdapter(PrayerCards.cardTitles.CARDS, getActivity().getApplicationContext());
     	viewPager.setAdapter(adapter);
     	viewPager.setCurrentItem(currentCard.id);
     	return viewPager;
