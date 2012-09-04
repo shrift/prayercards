@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tdh_container"
@@ -21,7 +22,7 @@
     <Button
         android:id="@+id/button1"
         android:layout_width="250dp"
-        android:layout_height="43dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/textViewLine1"
         android:layout_centerInParent="true"
         android:text="@string/tdh_button1" />
@@ -44,10 +45,27 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="250dp"
-        android:layout_height="43dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/textViewLine2"
         android:layout_centerInParent="true"
         android:text="@string/tdh_button2" />
 
+    <TextView
+        android:id="@+id/textViewLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewLine2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:background="@color/clear"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
-</RelativeLayout>
+    
+</RelativeLayout>    
+
+
